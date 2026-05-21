@@ -1,8 +1,10 @@
 body {
     padding:0;
     margin: 0;
-    background-color: black;
+    background: linear-gradient(135deg, #1a0533 0%, #0d1b4b 50%, #0a2a1a 100%);
+    min-height: 100vh;
 }
+
 .building {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,11 @@ body {
     height:860px;
     overflow: hidden;
     position: relative;
+    border-radius: 18px;
+    box-shadow: 0 0 40px #7F77DD55, 0 0 80px #1D9E7522;
+    border: 2px solid #534AB7;
 }
+
 .floor {
     margin-right: 5px;
     width: 513px;
@@ -18,6 +24,7 @@ body {
     background-image: url('assets/stairs.png');
     position: relative;
     pointer-events: none;
+    filter: hue-rotate(10deg) saturate(1.2);
 }
 
 .floor a {
@@ -33,6 +40,7 @@ body {
     width: 175px;
     height: 231px;
     background-image: url('assets/cabin.png');
+    filter: drop-shadow(0 0 10px #1D9E7588);
 }
 
 .door {
@@ -83,11 +91,12 @@ body {
     top: 0;
     width: 12px;
     height: 10px;
-    background-color: white;
+    background: linear-gradient(135deg, #AFA9EC, #9FE1CB);
     overflow: hidden;
-    border: 3px solid #333;
+    border: 2px solid #7F77DD;
     border-radius: 10px;
     transition: width 200ms, height 200ms;
+    box-shadow: 0 0 8px #7F77DD88;
 }
 
 #cabin form:hover {
@@ -99,13 +108,14 @@ body {
 #cabin form {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: black;
+    color: #26215C;
 }
 #cabin form label::before       { content: "••• " }
 #cabin form:hover label::before { content: none; }
 #cabin form input[type="range"] {
     width: 95%;
     display: block;
+    accent-color: #7F77DD;
 }
 
 /* Stairs */
@@ -148,9 +158,21 @@ a.callbtn {
     color: transparent;
     background-image: url('assets/updown.png');
     background-repeat: no-repeat;
+    border-radius: 6px;
+    transition: transform 0.1s, filter 0.2s;
+    filter: hue-rotate(200deg) saturate(1.5);
 }
+
+a.callbtn:hover {
+    transform: scale(1.15);
+    filter: hue-rotate(200deg) saturate(2.5) brightness(1.3);
+}
+
 .callbtn.sel { 
-    background-image: url('assets/updown-light.png'); 
+    background-image: url('assets/updown-light.png');
+    filter: hue-rotate(90deg) saturate(2) brightness(1.2);
+    box-shadow: 0 0 8px #1D9E75aa;
+    border-radius: 6px;
 }
 .up   { top: 219px; }
 .down { top: 250px; background-position-y: -31px; }
@@ -161,6 +183,7 @@ a.callbtn {
     top: 69px;
     left: 266px;
     z-index: 1;
+    filter: drop-shadow(0 0 4px #7F77DDaa);
 }
 
 .digits ul {
@@ -208,7 +231,6 @@ li.segoff { background-position-x: 0; }
     background-position-x: -207px;
 }
 
-
 /* Elevator control panel */
 
 .panel {
@@ -219,6 +241,8 @@ li.segoff { background-position-x: 0; }
     height: 478px;
     background-size: 166px 478px;
     background-image: url('assets/console.png');
+    filter: drop-shadow(0 0 16px #534AB7aa);
+    border-radius: 14px;
 }
 
 .screen {
@@ -242,7 +266,8 @@ li.segoff { background-position-x: 0; }
 }
 
 .screen.backlight p {
-    color: #03E;
+    color: #5DCAA5;
+    text-shadow: 0 0 6px #1D9E75;
 }
 
 .backlight {
@@ -264,22 +289,37 @@ li.segoff { background-position-x: 0; }
     height: 55px;
     margin: 2px 7px;
 }
+
 .panel a.btn {
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: #26215C;
     text-decoration: none;
     font-size: 22px;
+    font-weight: bold;
     text-align: center;
     padding-top: 14px;
     width: 100%;
     height: 45px;
     display: inline-block;
+    border-radius: 8px;
+    transition: transform 0.1s, filter 0.15s;
+}
+
+.panel a.btn:hover {
+    transform: scale(1.08);
+    filter: brightness(1.3);
+}
+
+.panel a.btn:active {
+    transform: scale(0.95);
 }
 
 .panel a.sel {
     background-image: url('assets/btn-light.png');
     background-repeat: no-repeat;
     background-size: 59px 230px;
+    filter: hue-rotate(240deg) saturate(2) brightness(1.1);
+    box-shadow: 0 0 10px #7F77DDaa;
 }
 .panel .row1 {background-position-y: -59px;}
 .panel .row2 {background-position-y: -118px;}
@@ -292,9 +332,22 @@ li.segoff { background-position-x: 0; }
     display: inline-block;
     width: 166px;
     height: 126px;
+    transition: filter 0.2s;
 }
+
+.panel .btnstop:hover {
+    filter: brightness(1.2) saturate(1.5);
+}
+
 .panel .btnstop.sel {
     background-image: url('assets/stop-light.png');
+    filter: drop-shadow(0 0 10px #D85A30cc);
+    animation: stopPulse 1s infinite alternate;
+}
+
+@keyframes stopPulse {
+    from { filter: drop-shadow(0 0 6px #D85A30aa); }
+    to   { filter: drop-shadow(0 0 18px #D85A30ff); }
 }
 
 /* npc */
@@ -327,6 +380,7 @@ li:has(a:hover) .mood, .mood.show {
     padding: 13px 15px;
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
+    filter: drop-shadow(0 2px 6px #7F77DDaa);
 }
 .wait0, .enter { background-position-x: 0; }
 .wait1, .call { background-position-x: -76px; }

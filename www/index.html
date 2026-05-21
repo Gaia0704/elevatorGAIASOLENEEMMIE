@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elevator</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="building">
+
         <div id="cabin">
             <ul></ul>
             <form>
@@ -20,23 +21,23 @@
                 <input type="range" id="presence" name="presence" min="0" max="1023" data-io-17="value/oninput" oninput="this.form['feedbackp'].value=`${this.value}`" value="1023">
             </form>
         </div>
-        <div class="floor" id="floor1">
-            <div class="digits">
-            <ul>
-                <!-- Digits d0=left, d2=colon, d4=right -->
-                <!--li class="d0 segoff"><li class="d1 segoff"><li class="d3 segoff"><li class="d4 segoff">-->
-                <li data-7seg-71="00" class="d0 seg0"><li data-7seg-71="01" class="d0 seg1"><li data-7seg-71="02" class="d0 seg2"><li data-7seg-71="03" class="d0 seg3"><li data-7seg-71="04" class="d0 seg4"><li data-7seg-71="05" class="d0 seg5"><li data-7seg-71="06" class="d0 seg6"><li data-7seg-71="07" class="d0 seg7">
-                <li data-7seg-71="10" class="d1 seg0"><li data-7seg-71="11" class="d1 seg1"><li data-7seg-71="12" class="d1 seg2"><li data-7seg-71="13" class="d1 seg3"><li data-7seg-71="14" class="d1 seg4"><li data-7seg-71="15" class="d1 seg5"><li data-7seg-71="16" class="d1 seg6"><li data-7seg-71="17" class="d1 seg7">
-                <li data-7seg-71="20" class="d2 seg1">
-                <li data-7seg-71="30" class="d3 seg0"><li data-7seg-71="31" class="d3 seg1"><li data-7seg-71="32" class="d3 seg2"><li data-7seg-71="33" class="d3 seg3"><li data-7seg-71="34" class="d3 seg4"><li data-7seg-71="35" class="d3 seg5"><li data-7seg-71="36" class="d3 seg6"><li data-7seg-71="37" class="d3 seg7">
-                <li data-7seg-71="40" class="d4 seg0"><li data-7seg-71="41" class="d4 seg1"><li data-7seg-71="42" class="d4 seg2"><li data-7seg-71="43" class="d4 seg3"><li data-7seg-71="44" class="d4 seg4"><li data-7seg-71="45" class="d4 seg5"><li data-7seg-71="46" class="d4 seg6"><li data-7seg-71="47" class="d4 seg7">
-            </ul>
-            </div>
+
+        <!-- ============================================================
+             floor5 = Etage 4 (index 5) — 7seg 0x75 — ledUp=5, ledDown=6
+             ============================================================ -->
+        <div class="floor" id="floor5">
+            <div class="digits"><ul>
+                <li data-7seg-75="00" class="d0 seg0"><li data-7seg-75="01" class="d0 seg1"><li data-7seg-75="02" class="d0 seg2"><li data-7seg-75="03" class="d0 seg3"><li data-7seg-75="04" class="d0 seg4"><li data-7seg-75="05" class="d0 seg5"><li data-7seg-75="06" class="d0 seg6"><li data-7seg-75="07" class="d0 seg7">
+                <li data-7seg-75="10" class="d1 seg0"><li data-7seg-75="11" class="d1 seg1"><li data-7seg-75="12" class="d1 seg2"><li data-7seg-75="13" class="d1 seg3"><li data-7seg-75="14" class="d1 seg4"><li data-7seg-75="15" class="d1 seg5"><li data-7seg-75="16" class="d1 seg6"><li data-7seg-75="17" class="d1 seg7">
+                <li data-7seg-75="20" class="d2 seg1">
+                <li data-7seg-75="30" class="d3 seg0"><li data-7seg-75="31" class="d3 seg1"><li data-7seg-75="32" class="d3 seg2"><li data-7seg-75="33" class="d3 seg3"><li data-7seg-75="34" class="d3 seg4"><li data-7seg-75="35" class="d3 seg5"><li data-7seg-75="36" class="d3 seg6"><li data-7seg-75="37" class="d3 seg7">
+                <li data-7seg-75="40" class="d4 seg0"><li data-7seg-75="41" class="d4 seg1"><li data-7seg-75="42" class="d4 seg2"><li data-7seg-75="43" class="d4 seg3"><li data-7seg-75="44" class="d4 seg4"><li data-7seg-75="45" class="d4 seg5"><li data-7seg-75="46" class="d4 seg6"><li data-7seg-75="47" class="d4 seg7">
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" data-led-neo="11" data-r-btn="1100 Ω" class="callbtn up"  >Up</a>
-                <a href="#" data-led-neo="10" data-r-btn="1000 Ω" class="callbtn down">Down</a>
+                <a href="#" data-led-neo="5" data-r-btn="169" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="6" data-r-btn="161" class="callbtn down">Down</a>
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -44,22 +45,23 @@
                 <ul class="exit"></ul>
             </div>
         </div>
-        <div class="floor" id="floor0">
-            <div class="digits">
-            <ul>
-                <!-- Digits d0=left, d2=colon, d4=right -->
-                <!--li class="d0 segoff"><li class="d1 segoff"><li class="d3 segoff"><li class="d4 segoff">-->
-                <li data-7seg-70="00" class="d0 seg0"><li data-7seg-70="01" class="d0 seg1"><li data-7seg-70="02" class="d0 seg2"><li data-7seg-70="03" class="d0 seg3"><li data-7seg-70="04" class="d0 seg4"><li data-7seg-70="05" class="d0 seg5"><li data-7seg-70="06" class="d0 seg6"><li data-7seg-70="07" class="d0 seg7">
-                <li data-7seg-70="10" class="d1 seg0"><li data-7seg-70="11" class="d1 seg1"><li data-7seg-70="12" class="d1 seg2"><li data-7seg-70="13" class="d1 seg3"><li data-7seg-70="14" class="d1 seg4"><li data-7seg-70="15" class="d1 seg5"><li data-7seg-70="16" class="d1 seg6"><li data-7seg-70="17" class="d1 seg7">
-                <li data-7seg-70="20" class="d2 seg1">
-                <li data-7seg-70="30" class="d3 seg0"><li data-7seg-70="31" class="d3 seg1"><li data-7seg-70="32" class="d3 seg2"><li data-7seg-70="33" class="d3 seg3"><li data-7seg-70="34" class="d3 seg4"><li data-7seg-70="35" class="d3 seg5"><li data-7seg-70="36" class="d3 seg6"><li data-7seg-70="37" class="d3 seg7">
-                <li data-7seg-70="40" class="d4 seg0"><li data-7seg-70="41" class="d4 seg1"><li data-7seg-70="42" class="d4 seg2"><li data-7seg-70="43" class="d4 seg3"><li data-7seg-70="44" class="d4 seg4"><li data-7seg-70="45" class="d4 seg5"><li data-7seg-70="46" class="d4 seg6"><li data-7seg-70="47" class="d4 seg7">
-            </ul>
-            </div>
+
+        <!-- ============================================================
+             floor4 = Etage 3 (index 4) — 7seg 0x74 — ledUp=3, ledDown=4
+             ============================================================ -->
+        <div class="floor" id="floor4">
+            <div class="digits"><ul>
+                <li data-7seg-74="00" class="d0 seg0"><li data-7seg-74="01" class="d0 seg1"><li data-7seg-74="02" class="d0 seg2"><li data-7seg-74="03" class="d0 seg3"><li data-7seg-74="04" class="d0 seg4"><li data-7seg-74="05" class="d0 seg5"><li data-7seg-74="06" class="d0 seg6"><li data-7seg-74="07" class="d0 seg7">
+                <li data-7seg-74="10" class="d1 seg0"><li data-7seg-74="11" class="d1 seg1"><li data-7seg-74="12" class="d1 seg2"><li data-7seg-74="13" class="d1 seg3"><li data-7seg-74="14" class="d1 seg4"><li data-7seg-74="15" class="d1 seg5"><li data-7seg-74="16" class="d1 seg6"><li data-7seg-74="17" class="d1 seg7">
+                <li data-7seg-74="20" class="d2 seg1">
+                <li data-7seg-74="30" class="d3 seg0"><li data-7seg-74="31" class="d3 seg1"><li data-7seg-74="32" class="d3 seg2"><li data-7seg-74="33" class="d3 seg3"><li data-7seg-74="34" class="d3 seg4"><li data-7seg-74="35" class="d3 seg5"><li data-7seg-74="36" class="d3 seg6"><li data-7seg-74="37" class="d3 seg7">
+                <li data-7seg-74="40" class="d4 seg0"><li data-7seg-74="41" class="d4 seg1"><li data-7seg-74="42" class="d4 seg2"><li data-7seg-74="43" class="d4 seg3"><li data-7seg-74="44" class="d4 seg4"><li data-7seg-74="45" class="d4 seg5"><li data-7seg-74="46" class="d4 seg6"><li data-7seg-74="47" class="d4 seg7">
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" data-led-neo="9" data-r-btn="900 Ω" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="3" data-r-btn="152" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="4" data-r-btn="144" class="callbtn down">Down</a>
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -67,12 +69,23 @@
                 <ul class="exit"></ul>
             </div>
         </div>
+
+        <!-- ============================================================
+             floor3 = Etage 2 (index 3) — 7seg 0x73 — ledUp=1, ledDown=2
+             ============================================================ -->
         <div class="floor" id="floor3">
+            <div class="digits"><ul>
+                <li data-7seg-73="00" class="d0 seg0"><li data-7seg-73="01" class="d0 seg1"><li data-7seg-73="02" class="d0 seg2"><li data-7seg-73="03" class="d0 seg3"><li data-7seg-73="04" class="d0 seg4"><li data-7seg-73="05" class="d0 seg5"><li data-7seg-73="06" class="d0 seg6"><li data-7seg-73="07" class="d0 seg7">
+                <li data-7seg-73="10" class="d1 seg0"><li data-7seg-73="11" class="d1 seg1"><li data-7seg-73="12" class="d1 seg2"><li data-7seg-73="13" class="d1 seg3"><li data-7seg-73="14" class="d1 seg4"><li data-7seg-73="15" class="d1 seg5"><li data-7seg-73="16" class="d1 seg6"><li data-7seg-73="17" class="d1 seg7">
+                <li data-7seg-73="20" class="d2 seg1">
+                <li data-7seg-73="30" class="d3 seg0"><li data-7seg-73="31" class="d3 seg1"><li data-7seg-73="32" class="d3 seg2"><li data-7seg-73="33" class="d3 seg3"><li data-7seg-73="34" class="d3 seg4"><li data-7seg-73="35" class="d3 seg5"><li data-7seg-73="36" class="d3 seg6"><li data-7seg-73="37" class="d3 seg7">
+                <li data-7seg-73="40" class="d4 seg0"><li data-7seg-73="41" class="d4 seg1"><li data-7seg-73="42" class="d4 seg2"><li data-7seg-73="43" class="d4 seg3"><li data-7seg-73="44" class="d4 seg4"><li data-7seg-73="45" class="d4 seg5"><li data-7seg-73="46" class="d4 seg6"><li data-7seg-73="47" class="d4 seg7">
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" class="callbtn up">Up</a>
-                <a href="#" class="callbtn down">Down</a>
+                <a href="#" data-led-neo="1" data-r-btn="135" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="2" data-r-btn="127" class="callbtn down">Down</a>
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -80,23 +93,23 @@
                 <ul class="exit"></ul>
             </div>
         </div>
+
+        <!-- ============================================================
+             floor2 = Etage 1 (index 2) — 7seg 0x72 — ledUp=13, ledDown=12
+             ============================================================ -->
         <div class="floor" id="floor2">
-            <div class="digits">
-            <ul>
-                <!-- Digits d0=left, d2=colon, d4=right -->
-                <!--li class="d0 segoff"><li class="d1 segoff"><li class="d3 segoff"><li class="d4 segoff">-->
+            <div class="digits"><ul>
                 <li data-7seg-72="00" class="d0 seg0"><li data-7seg-72="01" class="d0 seg1"><li data-7seg-72="02" class="d0 seg2"><li data-7seg-72="03" class="d0 seg3"><li data-7seg-72="04" class="d0 seg4"><li data-7seg-72="05" class="d0 seg5"><li data-7seg-72="06" class="d0 seg6"><li data-7seg-72="07" class="d0 seg7">
                 <li data-7seg-72="10" class="d1 seg0"><li data-7seg-72="11" class="d1 seg1"><li data-7seg-72="12" class="d1 seg2"><li data-7seg-72="13" class="d1 seg3"><li data-7seg-72="14" class="d1 seg4"><li data-7seg-72="15" class="d1 seg5"><li data-7seg-72="16" class="d1 seg6"><li data-7seg-72="17" class="d1 seg7">
                 <li data-7seg-72="20" class="d2 seg1">
                 <li data-7seg-72="30" class="d3 seg0"><li data-7seg-72="31" class="d3 seg1"><li data-7seg-72="32" class="d3 seg2"><li data-7seg-72="33" class="d3 seg3"><li data-7seg-72="34" class="d3 seg4"><li data-7seg-72="35" class="d3 seg5"><li data-7seg-72="36" class="d3 seg6"><li data-7seg-72="37" class="d3 seg7">
                 <li data-7seg-72="40" class="d4 seg0"><li data-7seg-72="41" class="d4 seg1"><li data-7seg-72="42" class="d4 seg2"><li data-7seg-72="43" class="d4 seg3"><li data-7seg-72="44" class="d4 seg4"><li data-7seg-72="45" class="d4 seg5"><li data-7seg-72="46" class="d4 seg6"><li data-7seg-72="47" class="d4 seg7">
-            </ul>
-            </div>
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" data-led-neo="13" data-r-btn="1300 Ω" class="callbtn up">Up</a>
-                <a href="#" data-led-neo="12" data-r-btn="1200 Ω" class="callbtn down">Down</a>
+                <a href="#" data-led-neo="13" data-r-btn="118" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="12" data-r-btn="110" class="callbtn down">Down</a>
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -104,12 +117,23 @@
                 <ul class="exit"></ul>
             </div>
         </div>
-        <div class="floor" id="floor5">
-            <div class="cabin"></div>
+
+        <!-- ============================================================
+             floor1 = RDC (index 1) — 7seg 0x71 — ledUp=11, ledDown=10
+             ============================================================ -->
+        <div class="floor" id="floor1">
+            <div class="digits"><ul>
+                <li data-7seg-71="00" class="d0 seg0"><li data-7seg-71="01" class="d0 seg1"><li data-7seg-71="02" class="d0 seg2"><li data-7seg-71="03" class="d0 seg3"><li data-7seg-71="04" class="d0 seg4"><li data-7seg-71="05" class="d0 seg5"><li data-7seg-71="06" class="d0 seg6"><li data-7seg-71="07" class="d0 seg7">
+                <li data-7seg-71="10" class="d1 seg0"><li data-7seg-71="11" class="d1 seg1"><li data-7seg-71="12" class="d1 seg2"><li data-7seg-71="13" class="d1 seg3"><li data-7seg-71="14" class="d1 seg4"><li data-7seg-71="15" class="d1 seg5"><li data-7seg-71="16" class="d1 seg6"><li data-7seg-71="17" class="d1 seg7">
+                <li data-7seg-71="20" class="d2 seg1">
+                <li data-7seg-71="30" class="d3 seg0"><li data-7seg-71="31" class="d3 seg1"><li data-7seg-71="32" class="d3 seg2"><li data-7seg-71="33" class="d3 seg3"><li data-7seg-71="34" class="d3 seg4"><li data-7seg-71="35" class="d3 seg5"><li data-7seg-71="36" class="d3 seg6"><li data-7seg-71="37" class="d3 seg7">
+                <li data-7seg-71="40" class="d4 seg0"><li data-7seg-71="41" class="d4 seg1"><li data-7seg-71="42" class="d4 seg2"><li data-7seg-71="43" class="d4 seg3"><li data-7seg-71="44" class="d4 seg4"><li data-7seg-71="45" class="d4 seg5"><li data-7seg-71="46" class="d4 seg6"><li data-7seg-71="47" class="d4 seg7">
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" data-led-neo="18" class="callbtn down">Down</a>
+                <a href="#" data-led-neo="11" data-r-btn="101" class="callbtn up">Up</a>
+                <a href="#" data-led-neo="10" data-r-btn="93"  class="callbtn down">Down</a>
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -117,12 +141,23 @@
                 <ul class="exit"></ul>
             </div>
         </div>
-        <div class="floor" id="floor4">
+
+        <!-- ============================================================
+             floor0 = Parking (index 0) — 7seg 0x70 — ledUp=9 — pas de Down
+             ============================================================ -->
+        <div class="floor" id="floor0">
+            <div class="digits"><ul>
+                <li data-7seg-70="00" class="d0 seg0"><li data-7seg-70="01" class="d0 seg1"><li data-7seg-70="02" class="d0 seg2"><li data-7seg-70="03" class="d0 seg3"><li data-7seg-70="04" class="d0 seg4"><li data-7seg-70="05" class="d0 seg5"><li data-7seg-70="06" class="d0 seg6"><li data-7seg-70="07" class="d0 seg7">
+                <li data-7seg-70="10" class="d1 seg0"><li data-7seg-70="11" class="d1 seg1"><li data-7seg-70="12" class="d1 seg2"><li data-7seg-70="13" class="d1 seg3"><li data-7seg-70="14" class="d1 seg4"><li data-7seg-70="15" class="d1 seg5"><li data-7seg-70="16" class="d1 seg6"><li data-7seg-70="17" class="d1 seg7">
+                <li data-7seg-70="20" class="d2 seg1">
+                <li data-7seg-70="30" class="d3 seg0"><li data-7seg-70="31" class="d3 seg1"><li data-7seg-70="32" class="d3 seg2"><li data-7seg-70="33" class="d3 seg3"><li data-7seg-70="34" class="d3 seg4"><li data-7seg-70="35" class="d3 seg5"><li data-7seg-70="36" class="d3 seg6"><li data-7seg-70="37" class="d3 seg7">
+                <li data-7seg-70="40" class="d4 seg0"><li data-7seg-70="41" class="d4 seg1"><li data-7seg-70="42" class="d4 seg2"><li data-7seg-70="43" class="d4 seg3"><li data-7seg-70="44" class="d4 seg4"><li data-7seg-70="45" class="d4 seg5"><li data-7seg-70="46" class="d4 seg6"><li data-7seg-70="47" class="d4 seg7">
+            </ul></div>
             <div class="door left"></div>
             <div class="door right"></div>
             <div class="wall">
-                <a href="#" class="callbtn up">Up</a>
-                <a href="#" class="callbtn down">Down</a>
+                <a href="#" data-led-neo="9" data-r-btn="84" class="callbtn up">Up</a>
+                <!-- Pas de bouton Down au premier étage -->
             </div>
             <div class="stairs"><ul><li class="stair-door"></li></ul></div>
             <div class="corridor">
@@ -130,108 +165,133 @@
                 <ul class="exit"></ul>
             </div>
         </div>
+
+        <!-- ============================================================
+             Panneau de contrôle cabine
+             Clavier:  1 2 3 A    pad: 0  1  2  3
+                       4 5 6 B    pad: 4  5  6  7
+                       7 8 9 C    pad: 8  9 10 11
+                       * 0 # D    pad:12 13 14 15
+             Touche *=Parking(pad12), 0=RDC(pad13), 1-5=Etages 1-5(pad0-4)
+             ============================================================ -->
         <div class="panel">
             <div class="screen" data-lcd-backlight="backlight">
                 <p data-lcd-line="0"></p>
                 <p data-lcd-line="1"></p>
             </div>
             <ul>
-                <!--  Key     data-pad
-                    1 2 3 A |  0  1  2  3
-                    4 5 6 B |  4  5  6  7
-                    7 8 9 C |  8  9 10 11
-                    * 0 # D | 12 13 14 15
-                -->
+                <!-- Etage 3  → touche '3' → pad=2  → led neo 4 -->
                 <li><a href="#" id='panel3' class="btn row0" data-led-neo="4" data-pad="2">3</a></li>
+                <!-- Etage 4  → touche '4' → pad=4  → led neo 5 -->
                 <li><a href="#" id='panel4' class="btn row0" data-led-neo="5" data-pad="4">4</a></li>
+                <!-- Etage 1  → touche '1' → pad=0  → led neo 2 -->
                 <li><a href="#" id='panel1' class="btn row1" data-led-neo="2" data-pad="0">1</a></li>
+                <!-- Etage 2  → touche '2' → pad=1  → led neo 3 -->
                 <li><a href="#" id='panel2' class="btn row1" data-led-neo="3" data-pad="1">2</a></li>
+                <!-- Parking  → touche '*' → pad=12 → led neo 0 -->
                 <li><a href="#" id='panel-1' class="btn row2" data-led-neo="0" data-pad="12">-1</a></li>
+                <!-- RDC      → touche '0' → pad=13 → led neo 1 -->
                 <li><a href="#" id='panel0' class="btn row2" data-led-neo="1" data-pad="13">0</a></li>
-
-                <li><a href="#" id='panel-close' class="btn row3" data-led-neo="6" data-pad="7">&gt;&lt;</a></li>
-                <li><a href="#" id='panel-open' class="btn row3" data-led-neo="7" data-pad="11">&lt;&gt;</a></li>
+                <!-- Etage 5  → touche '5' → pad=5  → led neo 6 -->
+                <li><a href="#" id='panel5' class="btn row0" data-led-neo="6" data-pad="5">5</a></li>
+                <!-- Fermer portes → B → pad=7 → led neo 7 -->
+                <li><a href="#" id='panel-close' class="btn row3" data-led-neo="7" data-pad="7">&gt;&lt;</a></li>
+                <!-- Ouvrir portes → D → pad=11 → (pas de led) -->
+                <li><a href="#" id='panel-open' class="btn row3" data-pad="11">&lt;&gt;</a></li>
             </ul>
+            <!-- Bouton STOP → pad=15 → led neo 8 -->
             <a href="#" id="panel-stop" class="btnstop" data-led-neo="8" data-pad="15"></a>
         </div>
+
     </div>
+
     <script>
-        window.wasmLoaded = new Promise(resolve => window.Module = { 
-            onRuntimeInitialized: resolve 
+        window.wasmLoaded = new Promise(resolve => window.Module = {
+            onRuntimeInitialized: resolve
         });
     </script>
     <script src="a.out.js"></script>
     <script type="module">
-        import Adafruit_NeoPixel from "./js/Adafruit_NeoPixel.js"
-        import Adafruit_7segment from "./js/Adafruit_7segment.js"
-        import LiquidCrystal_I2C from "./js/LiquidCrystal_I2C.js"
+        import Adafruit_NeoPixel      from "./js/Adafruit_NeoPixel.js"
+        import Adafruit_7segment      from "./js/Adafruit_7segment.js"
+        import LiquidCrystal_I2C      from "./js/LiquidCrystal_I2C.js"
         import ResistorLadderPushBtns from "./js/ResistorLadderPushBtns.js"
-        import L293DMotors from "./js/L293DMotors.js"
-        import AnalogIO from "./js/AnalogIO.js"
-        import Keypad from "./js/Keypad.js"
-        import makeDraggable from './js/DraggableDiv.js'
-        import Building from './js/Elevator.js'
-        import Employee from './js/Employee.js'
-        import Wino from "./js/Wino.js"
-        
+        import L293DMotors            from "./js/L293DMotors.js"
+        import AnalogIO               from "./js/AnalogIO.js"
+        import Keypad                 from "./js/Keypad.js"
+        import makeDraggable          from './js/DraggableDiv.js'
+        import Building               from './js/Elevator.js'
+        import Employee               from './js/Employee.js'
+        import Wino                   from "./js/Wino.js"
+
         const PIN_MOTORS      = [ 2, 3, 4, 5 ]
         const PIN_KEYPAD_ROWS = [ 13, 12, 11, 10 ]
         const PIN_KEYPAD_COLS = [  9,  8,  7,  6 ]
-        const PIN_CALLBTNS    = 14 // A0
+        const PIN_CALLBTNS    = 14  // A0
         const PIN_NEOPIXEL    = 15
         const PIN_PRESSURE    = 16
         const PIN_PRESENCE    = 17
-        
+
         const neopixelOnOff = (l, v) => Adafruit_NeoPixel.OnOff(l, v, 'sel')
         const segmentOnOff  = (s, v) => s.classList.toggle('sel', v)
-        
+
         await window.wasmLoaded
+
         const components = [
-            // Motors
-            new L293DMotors      (Module, PIN_MOTORS, 
-                dir => dir && building.moveElevator(dir), 
+            // Moteurs cabine + portes
+            new L293DMotors      (Module, PIN_MOTORS,
+                dir => dir && building.moveElevator(dir),
                 dir => dir && building.moveDoors   (dir)),
-            // Elevator panel
+            // Panneau cabine
             new LiquidCrystal_I2C(Module, 0x20),
             new Keypad           (Module, PIN_KEYPAD_ROWS, PIN_KEYPAD_COLS),
-            // Sensors
+            // Capteurs
             new AnalogIO         (Module, PIN_PRESSURE),
             new AnalogIO         (Module, PIN_PRESENCE),
-            // Leds Panel: 0-8, Floor down/up leds: 9, 10-11, 12-13, 14-15, 16-17, 18
+            // LEDs NeoPixel (panel 0-8, étages 9-13, puis 1-8 réutilisés pour Et2-Et5)
             new Adafruit_NeoPixel(Module, PIN_NEOPIXEL, neopixelOnOff, 'neo'),
-            // Upper display
+            // Afficheurs 7 segments des 7 étages (0x70 à 0x76)
             new Adafruit_7segment(Module, 0x70, segmentOnOff, '70'),
             new Adafruit_7segment(Module, 0x71, segmentOnOff, '71'),
             new Adafruit_7segment(Module, 0x72, segmentOnOff, '72'),
-            // Up/Down buttons
+            new Adafruit_7segment(Module, 0x73, segmentOnOff, '73'),
+            new Adafruit_7segment(Module, 0x74, segmentOnOff, '74'),
+            new Adafruit_7segment(Module, 0x75, segmentOnOff, '75'),
+            new Adafruit_7segment(Module, 0x76, segmentOnOff, '76'),
+            // Boutons d'appel par résistance ladder
             new ResistorLadderPushBtns(Module, PIN_CALLBTNS, 10000, 'btn')
         ]
+
         const wino = new Wino(Module, components)
+
+        // floors : du bas vers le haut (index 0=Parking ... index 6=Etage5)
         const building = new Building({
-            floors : ['#floor0', '#floor1', '#floor2'], 
-            doors  : ['.left', '.right'], 
+            floors : ['#floor0', '#floor1', '#floor2', '#floor3', '#floor4', '#floor5', '#floor6'],
+            doors  : ['.left', '.right'],
             cabin  : '#cabin',
             analog : { pressure: '#pressure', presence: '#presence' },
-            buttons: {                       cabin0: '#panel-1', floor0up: '#floor0 .up',
-                floor1down: '#floor1 .down', cabin1: '#panel0' , floor1up: '#floor1 .up',
-                floor2down: '#floor2 .down', cabin2: '#panel1' , floor2up: '#floor2 .up',
-                floor3down: '#floor3 .down', cabin3: '#panel2' , floor3up: '#floor3 .up',
-                floor4down: '#floor4 .down', cabin4: '#panel3' , floor4up: '#floor4 .up',
-                floor5down: '#floor5 .down', cabin5: '#panel4',
+            buttons: {
+                                     cabin0 : '#panel-1',  floor0up  : '#floor0 .up',
+                floor1down: '#floor1 .down', cabin1 : '#panel0',   floor1up  : '#floor1 .up',
+                floor2down: '#floor2 .down', cabin2 : '#panel1',   floor2up  : '#floor2 .up',
+                floor3down: '#floor3 .down', cabin3 : '#panel2',   floor3up  : '#floor3 .up',
+                floor4down: '#floor4 .down', cabin4 : '#panel3',   floor4up  : '#floor4 .up',
+                floor5down: '#floor5 .down', cabin5 : '#panel4',   floor5up  : '#floor5 .up',
+                floor6down: '#floor6 .down', cabin6 : '#panel5',
                 cabinO: '#panel-open', cabinC: '#panel-close', cabinS: '#panel-stop'
             }
         })
+
         makeDraggable('.panel')
 
         const NPC_TIME_WORKING_MIN  = 20000
         const NPC_TIME_WORKING_MAX  = 60000
         const NPC_UPDATE_PERIOD     =   150
         const NPC_GAP               =    23
-        
+
         const people = Array(74, 60, 78, 62, 70, 71, 85, 52, 66, 76, 62, 65, 79, 54, 68, 82)
             .map(async (weight, i) => {
                 const one = new Employee(building, i, weight, NPC_TIME_WORKING_MIN, NPC_TIME_WORKING_MAX)
-                
                 one.run(NPC_UPDATE_PERIOD)
                 await new Promise(r => setTimeout(r, NPC_GAP))
                 return one
