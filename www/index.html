@@ -23,6 +23,30 @@
         </div>
 
         <!-- ============================================================
+             floor6 = Etage 5 (index 6) — 7seg 0x76 — ledDown=8 — pas de Up
+             ============================================================ -->
+        <div class="floor" id="floor6">
+            <div class="digits"><ul>
+                <li data-7seg-76="00" class="d0 seg0"><li data-7seg-76="01" class="d0 seg1"><li data-7seg-76="02" class="d0 seg2"><li data-7seg-76="03" class="d0 seg3"><li data-7seg-76="04" class="d0 seg4"><li data-7seg-76="05" class="d0 seg5"><li data-7seg-76="06" class="d0 seg6"><li data-7seg-76="07" class="d0 seg7">
+                <li data-7seg-76="10" class="d1 seg0"><li data-7seg-76="11" class="d1 seg1"><li data-7seg-76="12" class="d1 seg2"><li data-7seg-76="13" class="d1 seg3"><li data-7seg-76="14" class="d1 seg4"><li data-7seg-76="15" class="d1 seg5"><li data-7seg-76="16" class="d1 seg6"><li data-7seg-76="17" class="d1 seg7">
+                <li data-7seg-76="20" class="d2 seg1">
+                <li data-7seg-76="30" class="d3 seg0"><li data-7seg-76="31" class="d3 seg1"><li data-7seg-76="32" class="d3 seg2"><li data-7seg-76="33" class="d3 seg3"><li data-7seg-76="34" class="d3 seg4"><li data-7seg-76="35" class="d3 seg5"><li data-7seg-76="36" class="d3 seg6"><li data-7seg-76="37" class="d3 seg7">
+                <li data-7seg-76="40" class="d4 seg0"><li data-7seg-76="41" class="d4 seg1"><li data-7seg-76="42" class="d4 seg2"><li data-7seg-76="43" class="d4 seg3"><li data-7seg-76="44" class="d4 seg4"><li data-7seg-76="45" class="d4 seg5"><li data-7seg-76="46" class="d4 seg6"><li data-7seg-76="47" class="d4 seg7">
+            </ul></div>
+            <div class="door left"></div>
+            <div class="door right"></div>
+            <div class="wall">
+                <!-- Pas de bouton Up au dernier étage -->
+                <a href="#" data-led-neo="8" data-r-btn="178" class="callbtn down">Down</a>
+            </div>
+            <div class="stairs"><ul><li class="stair-door"></li></ul></div>
+            <div class="corridor">
+                <ul class="waiting"></ul>
+                <ul class="exit"></ul>
+            </div>
+        </div>
+
+        <!-- ============================================================
              floor5 = Etage 4 (index 5) — 7seg 0x75 — ledUp=5, ledDown=6
              ============================================================ -->
         <div class="floor" id="floor5">

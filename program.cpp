@@ -66,6 +66,7 @@ void loop() {
   floor_readbtns();
   switch(state) {
     case STATE_OPENED:
+    cabin_door(CABIN_DOOR_OPEN); 
       target = floor_requested(cabin_current_floor());
       status = "(waiting...)   ";
       if(timer_elapsed(timer, TIME_OPENED) && target >= 0) {
